@@ -1,1 +1,15 @@
-<p>dish-search works!</p>
+<div class="main-content-box my-5 mx-2 mx-sm-5 py-3 px-3">
+  <a routerLink="/home" class="btn btn-success main-button">
+      <span class="main-button-text">&lt; Go back</span>
+      <img class="main-button-img" src="../../../assets/goBackIcon.png" alt="go back icon">
+  </a>
+  <h1 class="text-center">Search</h1>
+  <label for="search">Search: </label>
+  <input id="search" type="text" [formControl]="searchbar" class="form-control">
+  <div class="container py-2 px-2">
+  <div class="bg-light mb-2 position-relative" *ngFor="let dish of dishes, let i=index">
+      <app-dish-item [dish]="dish" [index]="i"></app-dish-item>
+      <button class="btn btn-success position-absolute bottom-0 end-0 mb-2 ms-3" (click)="addDishButton(i)">Add</button>
+  </div>
+  </div>
+</div>

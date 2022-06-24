@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="d-flex flex-column align-items-center">
+  <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()" class="my-3 mx-3 px-2 px-sm-5 py-2 login-form d-flex flex-column align-items-center">
+      <div class="form-group">
+          <label class="form-label" for="email">Email:</label>
+          <input id="email" [class.is-valid]="!invalid('email')" [class.is-invalid]="invalid('email') && touched('email')" formControlName ="email" name="email" type="email" class="form-control">
+          <div class="invalid-feedback">
+              <p *ngIf = "requiredError('email') && touched('email')">Please enter an email</p>
+              <p *ngIf = "emailError('email') && touched('email')">Please enter a valid email</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="form-label" for="password">Password:</label>
+          <input id="password" [class.is-valid]="!invalid('password')" [class.is-invalid]="invalid('password') && touched('password')" formControlName = "password" name="password" type="password" class="form-control">
+          <div class="invalid-feedback">
+              <p *ngIf = "requiredError('password') && touched('password')">Please enter a password</p>
+          </div>
+      </div>
+      <button [disabled]="loginForm.invalid || submitting" type="submit" class="btn btn-success" value="submit">Login</button>
+  </form>
+</div>

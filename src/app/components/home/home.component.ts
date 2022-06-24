@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { DishItemComponent } from '../dish-item/dish-item.component';
 import { DishSearchService } from 'src/app/services/dish-search.service';
 import { DishesSelectionService } from 'src/app/services/dishes-selection.service';
 import { Result } from 'src/app/interfaces/api';

@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: "https://api.spoonacular.com/recipes/complexSearch",
+  apiKey: '867bf027eaaf4eaabbe173a801cd5397',
+  URL_Login: 'http://challenge-react.alkemy.org/'
 };
 
 /*

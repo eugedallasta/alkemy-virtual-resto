@@ -1,77 +1,33 @@
-<div class="row g-0">
-  <div class="col-md-4">
-    <img [src]="dish.image" class="dish-pic" alt="..." />
-  </div>
-  <div class="col-md-8">
-    <div class="card-body">
-      <h6 class="card-title">{{ dish.title }}</h6>
-      <p [title]="dish.summary" class="card-text">
-        <small class="text-muted">{{ dish.summary.slice(0, 100) }}... </small>
-      </p>
-
-
-        <button
-          type="button"
-          class="btn btn-outline-secondary"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-        >
-          More Info
-        </button>
-
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="staticBackdrop"
-          data-bs-backdrop="static"
-          data-bs-keyboard="false"
-          tabindex="-1"
-          aria-labelledby="staticBackdropLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">
-                  Meal Information
-                </h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <p class="card-text">
-                  <small class="text-muted"
-                    >Price: {{ dish.pricePerServing | currency }}
-                  </small>
-                </p>
-                <p class="card-text">
-                  <small class="text-muted"
-                    >Preparation Time: {{ dish.readyInMinutes }} minutes
-                  </small>
-                </p>
-                <p class="card-text">
-                  <small class="text-muted"
-                    >Health Score: {{ dish.healthScore }}</small
-                  >
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-              </div>
-            </div>
+<div class="py-2">
+  <div class="d-flex flex-column flex-md-row">
+      <img class="content-box-image" [src]="dish?.image" alt="">
+      <div class="d-flex flex-column py-2 px-2 position-relative">
+          <div class="d-flex flex-row">
+              <p class="fs-5 fw-bold content-box-title">{{dish?.title}}</p>
+              <p class="fw-bold text-success position-absolute top-0 end-0 mt-2 me-2 mb-0" *ngIf="dish?.vegan">Vegan</p>
           </div>
-        </div>
-        <!-- Fin Modal -->
+          <p class="content-box-text" [innerHtml]="dish.summary"></p>
       </div>
-    </div>
   </div>
+  <div class="d-flex flex-column position-relative pt-4 pb-5">
+      <a class="position-absolute bottom-0 start-0 ms-3 btn btn-success" #expandLink (click)="expandLinkText(expandLink)" href="" data-bs-toggle="collapse" href="#details{{index}}" aria-expanded="false">See more</a>
+      <div id="details{{index}}" class="collapse">
+          <table class="table">
+              <tbody>
+                  <tr>
+                      <th>Price per serving</th>
+                      <td>${{dish?.pricePerServing}}</td>
+                  </tr>
+                  <tr>
+                      <th>Health score</th>
+                      <td>{{dish?.healthScore}} points</td>
+                  </tr>
+                  <tr>
+                      <th>Ready in</th>
+                      <td>{{dish?.readyInMinutes}} minutes</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>

@@ -16,4 +16,13 @@ export class DishItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  expandLinkText(element :HTMLElement){
+    console.log(typeof(element.getAttribute('aria-expanded')));
+    if(element.getAttribute('aria-expanded') == 'true') {
+      element.innerHTML = "See less";
+    } else {
+      element.innerHTML = "See more";
+    }
+  }
+
 }

@@ -51,8 +51,9 @@ export class DishesSelectionService {
     let totalServingTime: number = 0;
     this.menu.forEach(element => {
       totalServingTime += element?.readyInMinutes;
+
     });
-    return totalServingTime;
+    return totalServingTime / this.menu.length;
   }
   //Retoran el healthscore total
   getTotalHealthScore(): number {
@@ -60,7 +61,7 @@ export class DishesSelectionService {
     this.menu.forEach(element => {
       totalHealthScore += element?.healthScore;
     });
-    return totalHealthScore;
+    return totalHealthScore / this.menu.length;
   }
 
 

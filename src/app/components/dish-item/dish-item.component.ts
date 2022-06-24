@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Result } from 'src/app/interfaces/api';
 
 @Component({
   selector: 'app-dish-item',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dish-item.component.css']
 })
 export class DishItemComponent implements OnInit {
+
+  @Input() dish !:Result;
+  @Input() index !:number;
 
   constructor() { }
 

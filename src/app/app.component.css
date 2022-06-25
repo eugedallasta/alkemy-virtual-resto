@@ -12,7 +12,7 @@
   height: auto;
 }
 .app-title {
-  font-family: 'Smooch', cursive;
+  font-family: 'Roboto', sans-serif;
   color: white;
   font-size: 50px;
   @media screen and (min-width:576px) {

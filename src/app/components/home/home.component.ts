@@ -17,8 +17,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private searchService:DishSearchService, private dishes:DishesSelectionService) { }
 
-
-
    //Retorna el menu
    getMenuDishes() :Array<Result>{
     return this.dishes.getMenu();

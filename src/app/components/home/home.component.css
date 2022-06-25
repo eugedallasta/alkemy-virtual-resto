@@ -1,0 +1,12 @@
+.welcome-text{
+  width: 75%;
+  margin: 2rem auto;
+  border: 0.18rem solid rgb(6, 6, 6);
+  padding: 1rem;
+  background-color:rgb(213, 212, 211);
+}
+.container{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -19,9 +19,9 @@ export class DishItemComponent implements OnInit {
   expandLinkText(element :HTMLElement){
     console.log(typeof(element.getAttribute('aria-expanded')));
     if(element.getAttribute('aria-expanded') == 'true') {
-      element.innerHTML = "See less";
+      element.innerHTML = "Close";
     } else {
-      element.innerHTML = "See more";
+      element.innerHTML = "More information";
     }
   }
 
